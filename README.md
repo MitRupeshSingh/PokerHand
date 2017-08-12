@@ -3,7 +3,7 @@ Poker Hand Java Code
 
 
 It is a poker hand project where input is taken from user in the form of "AH 2D 8S JD KD".
-Each player is provided 5 pairs of cards.
+Each player is provided 5 cards.
 
 We created 3 class: Card, Game and Hand.
 
