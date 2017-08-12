@@ -1,5 +1,5 @@
 # PokerHand
-Poker Hand Java Code
+Poker Hand Java Code With Test Java File
 
 
 It is a poker hand project where input is taken from user in the form of "AH 2D 8S JD KD".
@@ -22,3 +22,5 @@ We created 3 class: Card, Game and Hand.
    High Card: 0
    
 3. Game is the main class which takes input from the user for different players and perform all the comparison of the cards. 
+
+Finally, we have PokerHandTest file which test different condition for our project.
