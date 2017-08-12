@@ -1,6 +1,8 @@
 # PokerHand
 Poker Hand Java Code With Test Java File
 
+This project is easy to run as it does not have any dependencies.
+Just run the project or main class(Game.java).
 
 It is a poker hand project where input is taken from user in the form of "AH 2D 8S JD KD".
 Each player is provided 5 cards.
