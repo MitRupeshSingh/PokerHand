@@ -23,4 +23,4 @@ We created 3 class: Card, Game and Hand.
    
 3. Game is the main class which takes input from the user for different players and perform all the comparison of the cards. 
 
-Finally, we have PokerHandTest file which test different condition for our project.
+Finally, we have PokerHandTest file which test different conditions for our project.
