@@ -46,24 +46,24 @@ public class Hand {
 		//check the cards hand
 		if (isStraightFlush(values,flush) == 8) {
 
-        } else if (isFourOfAKind(values) == 7) {
+		} else if (isFourOfAKind(values) == 7) {
 
-        } else if (isFullHouse(values)== 6) {
+		} else if (isFullHouse(values)== 6) {
 
-        } else if (flush) {
-        	isFlush(values);
-        } else if (isStraight(values)== 4) {
+		} else if (flush) {
+			isFlush(values);
+		} else if (isStraight(values)== 4) {
 
-        } else if (isThreeOfAKind(values) == 3) {
- 
-        } else if (pairs(values) == 2) {
- 
-        } else if (pairs(values) == 1) {
-        
-        } else {
-            isHighCard(values);
-            value[0]=0;
-        }
+		} else if (isThreeOfAKind(values) == 3) {
+
+		} else if (pairs(values) == 2) {
+
+		} else if (pairs(values) == 1) {
+
+		} else {
+		    isHighCard(values);
+		    value[0]=0;
+		}
    
 	}
 	
@@ -72,7 +72,7 @@ public class Hand {
 	public void isHighCard(int[] values){
 		for (int i = 0; i < 5; i++) {
 			value[i+1]=values[i];
-        }
+        	}
 		
 	}
 	
@@ -92,7 +92,7 @@ public class Hand {
 						value[2]=values[i];
 					}
 				}
-        }
+        	}
 		int k=counter+1;
 		for(int i=0; i<5;i++){
 			if(counter==1 && values[i]!=value[1]){
@@ -110,13 +110,13 @@ public class Hand {
 	//finds three of a kind	
 	public int isThreeOfAKind(int[] values) {
        
-        for (int i = 0; i < values.length - 2; i++) {
-            if (values[i] == values[i + 1] && values[i] == values[i + 2]) {
-                value[0] = 3;
-				value[1]=values[i];
-				break;
-            }
-        }
+		for (int i = 0; i < values.length - 2; i++) {
+		    if (values[i] == values[i + 1] && values[i] == values[i + 2]) {
+			value[0] = 3;
+					value[1]=values[i];
+					break;
+		    }
+		}
 		int k=2;
 		if(value[0]==3){
 			for (int j = 0; j < values.length; j++){
@@ -124,89 +124,89 @@ public class Hand {
 			}
 		}
         
-        return value[0];
-    }	
+        	return value[0];
+   	 }	
 	
 	
 	//finds if the card is straight
 	public int isStraight(int[] values) {
         
 		for (int i = 0; i < values.length - 1; i++){
-            if (values[i] == values[i + 1]+1) {
-                value[0]=4;
-            }else {
-				value[0]=0;
-            	break;
-            }
+		    if (values[i] == values[i + 1]+1) {
+			value[0]=4;
+		    }else {
+					value[0]=0;
+			break;
+		    }
 
-        }
+        	}
 		if(value[0]==4){
 			value[1]=values[0];
 			for(int i=2;i<6;i++){
 				value[i]=0;
 			}
 		}
-        return value[0];
-    }	
+        	return value[0];
+    	}	
 		
 	
 	//checks if it is Flush
 	 public void isFlush(int[] values) {
-        value[0]=5;
-        isHighCard(values);
+		value[0]=5;
+		isHighCard(values);
 
-    }	
+    	}	
 	
 	 
 	//checks if the cards contain Full House
 	public int isFullHouse(int[] values) {
-        boolean one = false;
-        boolean two = false;       
-        value[0]=0;
-            if (values[0] == values[1] && values[1] == values[2]) {
-                one = true;
+		boolean one = false;
+		boolean two = false;       
+		value[0]=0;
+            	if (values[0] == values[1] && values[1] == values[2]) {
+                		one = true;
 				value[1]=values[0];
-            }
-			if (values[2] == values[3] && values[2] == values[4]) {
-                one = true;
+            	}
+		if (values[2] == values[3] && values[2] == values[4]) {
+				one = true;
 				value[1]=values[2];
-            }
-			if (values[0] == values[1] && values[1] != values[2]) {
-                two = true;
+            	}
+		if (values[0] == values[1] && values[1] != values[2]) {
+                		two = true;
 				value[2]=values[0];
-            }
-			if (values[4] == values[3] && values[2] != values[4]) {
-                two = true;
+            	}
+		if (values[4] == values[3] && values[2] != values[4]) {
+                		two = true;
 				value[2]=values[3];
-            }
-			if(one && two){
+            	}
+		if(one && two){
 				value[0]=6;
 				for(int i=3;i<6;i++){
 					value[i]=0;
 				}
-			}
-			return value[0];
+		}
+		return value[0];
     }
 		
 	
 	//Checks if the cards contain Four Of a Kind
 	public int isFourOfAKind(int[] values) {
 
-        for (int i = 0; i < values.length - 3; i++) {
-            if (values[i] == values[i + 1] && values[i] == values[i + 2] && values[i] == values[i + 3]) {
-                value[0] = 7;
-				value[1] = values[i];
-				if(i+4<5){
-					value[2]=values[4];
-				}else{
-					value[2]=values[0];
-				}
-				for(int j=3;j<6;j++){
-					value[j]=0;
-				}
-            }
-        }
-        return value[0];
+		for (int i = 0; i < values.length - 3; i++) {
+		    if (values[i] == values[i + 1] && values[i] == values[i + 2] && values[i] == values[i + 3]) {
+			value[0] = 7;
+					value[1] = values[i];
+					if(i+4<5){
+						value[2]=values[4];
+					}else{
+						value[2]=values[0];
+					}
+					for(int j=3;j<6;j++){
+						value[j]=0;
+					}
+		    }
+		}
+        	return value[0];
     }
 		
 	
