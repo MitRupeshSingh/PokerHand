@@ -8,29 +8,29 @@ public class Game {
 	/**
 	 * @param args
 	 */
-	private static String WinnerHand=""; // saves the winner hand after comparison
+      private static String WinnerHand=""; // saves the winner hand after comparison
 	
-	public static void main(String[] args) {
+      public static void main(String[] args) {
 		
-	  // TODO Auto-generated method stub
-	  int PlayerNumber=0;
-	  
-      Scanner input = new Scanner(System.in);
-      System.out.println("Enter the number of players:");//input number of players
-      Integer numPlay = input.nextInt();
-      input.nextLine();
-      
-      System.out.println("Enter value and suit of each card seperated by space:");//input cards suites and values
-      System.out.println("Example: 8H 9S JD KC AD");
-	  String[] Players = new String[numPlay];
-      while(numPlay!=PlayerNumber){
-    	  Players[PlayerNumber]=input.nextLine();
-    	  PlayerNumber++;
-      }
-      winnerHand(Players);
-      input.close();
-      System.out.println(WinnerHand);
-	}
+		  // TODO Auto-generated method stub
+	      int PlayerNumber=0;
+
+	      Scanner input = new Scanner(System.in);
+	      System.out.println("Enter the number of players:");//input number of players
+	      Integer numPlay = input.nextInt();
+	      input.nextLine();
+
+	      System.out.println("Enter value and suit of each card seperated by space:");//input cards suites and values
+	      System.out.println("Example: 8H 9S JD KC AD");
+	      String[] Players = new String[numPlay];
+	      while(numPlay!=PlayerNumber){
+		  Players[PlayerNumber]=input.nextLine();
+		  PlayerNumber++;
+	      }
+	      winnerHand(Players);
+	      input.close();
+	      System.out.println(WinnerHand);
+        }
 	
 	
 	public static void winnerHand(String[] players){
@@ -44,6 +44,7 @@ public class Game {
 		  String hand1="",hand2=""; //saves hand value
 		  for(int i=1;i<=players.length;i++){ // loop through every players
 		    	  car=players[i-1].split(" ");
+			  if(car.length!=5) System.out.println("Cards size should be 5");
 		    	  if(i==1){
 			    	  cards2=Card.compare(car);  
 			    	  h2 = new Hand(cards2);
